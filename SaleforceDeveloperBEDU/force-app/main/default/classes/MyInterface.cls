@@ -9,7 +9,7 @@ public class MyInterface implements InterfacePractice {
     }
 
     public void metodo3(string param1) {
-        system.debug(param1);
+        system.debug(param1 + ' Implementation' );
 
     }
 
