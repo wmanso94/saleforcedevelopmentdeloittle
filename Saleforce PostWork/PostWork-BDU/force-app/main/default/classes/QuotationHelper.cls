@@ -13,17 +13,32 @@ public with sharing class QuotationHelper {
         insert lst;
     }
 
-    public void productsInInventory(){
-        /*string nameInv = 'Invent0001';
-		Inventario__c inv = [SELECT Name, Codigo_Prod__c FROM Inventario__c WHERE Name = :nameInv LIMIT 1];
-        sObject inv2 = [SELECT Name, Codigo_Prod__c FROM Inventario__c WHERE Name = :nameInv LIMIT 1];
-        List<sObject> lst2 = [SELECT Name, Codigo_Prod__c FROM Inventario__c WHERE Name = :nameInv];*/
+    public List<Inventario__c> productsInInventory(){
+        return [SELECT id,Name FROM Inventario__c LIMIT 200];
 
-        //Inventario__c[] inv = [SELECT id,Name,Codigo_Prod__c,Cantidad_dis__c,Cantidad_apart__c FROM Inventario__c WHERE Name = 'Invent0001'];
-        //Inventario__c[] inv2 = [SELECT id,Name,Codigo_Prod__c,Cantidad_dis__c,Cantidad_apart__c FROM Inventario__c WHERE Name = 'Invent0002'];
-        List<Inventario__c> lst = [SELECT id,Name,Codigo_Prod__c,Cantidad_dis__c,Cantidad_apart__c FROM Inventario__c LIMIT 200];
-		//System.debug(inv);
-        //System.debug(inv2);
-        System.debug(lst);
+    }
+
+    public boolean confirmProductExistByCode(String code){
+
+        if (null != [SELECT ExternalId
+                     FROM Product2
+                     WHERE ProductCode = :code]){
+            return True;
+        }else{
+            return False;
+        }
+    }
+
+    public void searchProductByCode(String code){
+        
+        List<Inventario__c> CantDis = [SELECT Cantidad_dis__c FROM Inventario__c WHERE Codigo_Prod__c = :code];
+        
+        if(CantDis != null){
+            
+            system.debug(CantDis);
+                
+        }else{ 
+             system.debug(0);         
+        }
     }
 }

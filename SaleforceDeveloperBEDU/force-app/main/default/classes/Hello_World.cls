@@ -26,5 +26,9 @@ public class Hello_World {
         
     }
     
+    @InvocableMethod(label='PruebaFlow')
+    public static void pruebaFlow(){
+        system.debug('Mensaje de prueba');
+    }
      
 }
