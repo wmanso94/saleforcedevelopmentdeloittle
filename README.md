@@ -1,4 +1,4 @@
-# saleforcedevelopmentdeloittle https://github.com/wmanso94/saleforcedevelopmentdeloittle
+# saleforcedevelopmentdeloittle 
 # SaleforceDeveloperBEDU
 # PostWork-BDU
 # PreWorksTestingSaleforceBDU
