@@ -1,0 +1,28 @@
+<apex:page standardController="Quote" extensions="CotizadorController" lightningStylesheets="true">
+    <apex:pageBlock title="Cotizaciones">
+        <apex:pageBlock title="Buen día {!$User.FirstName}">
+            <apex:form >
+                <apex:pageMessages >
+                    
+                </apex:pageMessages>
+                <apex:outputLabel value="Product Code "/>
+                <apex:inputText value="{!code}" />
+                <apex:commandButton value="Search" action="{!search}"/>
+                <apex:commandButton value="Clear" action="{!clear}"/>
+                <apex:pageBlock title="Products">
+                    <apex:pageBlockTable value="{!listInv}" var="inv">
+                        <apex:column value="{!inv.Product2.Name}"/>
+                        <apex:column value="{!inv.UnitPrice}"/>
+                        <apex:column value="{!inv.product2.ExternalId}"/>
+                        <apex:column headerValue="Reserved"><apex:inputField value="{!inv.Reserved__c}" /></apex:column>
+                        <apex:column value="{!inv.Available__c}"/>
+                    </apex:pageBlockTable>
+                </apex:pageBlock>
+                <apex:pageBlock title="Options">
+                    <apex:commandButton value="Cancel" action="{!cancel}"/>
+                    <apex:commandButton value="Save" action="{!save}"/>
+                </apex:pageBlock>
+            </apex:form>
+        </apex:pageBlock>
+    </apex:pageBlock>
+</apex:page>

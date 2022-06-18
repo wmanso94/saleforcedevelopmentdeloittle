@@ -4,7 +4,7 @@ private class AccountProcessorTest {
     private static void testCountContacts() {
         Account newAccount = new Account(Name='Test Account');
         insert newAccount;
-        
+
         Contact newContact1 = new Contact(FirstName='John',
                                           LastName='Doe',
                                           AccountId=NewAccount.Id);
@@ -12,11 +12,11 @@ private class AccountProcessorTest {
         Contact newContact2 = new Contact(FirstName='Jane',
                                           LastName='Doe',
                                           AccountId=NewAccount.Id);
-        insert newContact2;       
-        
+        insert newContact2;
+
         List<Id> accountIds = new List<Id>();
         accountIds.add(newAccount.Id);
-     
+
         Test.startTest();
         AccountProcessor.countContacts(accountIds);
         Test.stopTest();
