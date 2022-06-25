@@ -1,0 +1,20 @@
+<template>
+    <lightning-card title="Account Search">
+        <lightning-layout multiple-rows="true" vertical-align="end">
+            <div class="slds-m-around_medium">
+            <lightning-layout-item size="3" padding="around_small">
+                <!--Lightning input-->
+                <lightning-input type="text" label="Enter Account Name" value={key} onchange={updateKey}></lightning-input>
+            </lightning-layout-item></div>
+            <div class="slds-m-around_medium">
+            <lightning-layout-item size="2" padding="around_small">
+                <!--Lightning button-->
+                <lightning-button label="Search" onclick={handleSearch} variant="brand"></lightning-button>
+            </lightning-layout-item></div>
+            <lightning-layout-item size="12" padding="around_small">
+                <!--Lightning table-->
+                <lightning-datatable key-field="Id" data={accounts} columns={cols}></lightning-datatable>
+            </lightning-layout-item>
+        </lightning-layout>
+    </lightning-card>
+</template>

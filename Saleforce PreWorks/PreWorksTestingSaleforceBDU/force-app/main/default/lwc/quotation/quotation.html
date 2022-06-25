@@ -1,0 +1,18 @@
+<template>
+    <lightning-card title="Product Search">
+        <lightning-layout multiple-rows="true" vertical-align="end">
+            <lightning-layout-item size="4" padding="around_small" class="slds-m-around_medium">
+                <!--Lightning input-->
+                <lightning-input type="text" label="Enter Product Code" value={key} onchange={updateKey}></lightning-input>
+            </lightning-layout-item>
+            <lightning-layout-item size="2" padding="around_small" class="slds-m-around_medium">
+                <!--Lightning button-->
+                <lightning-button label="Search" onclick={handleSearch} variant="brand"></lightning-button>
+            </lightning-layout-item>
+            <lightning-layout-item size="12" padding="around_small">
+                <!--Lightning table-->
+                <lightning-datatable key-field="Id" data={PricebookEntry} columns={cols} hide-checkbox-column="true" show-row-number-column="false"></lightning-datatable>
+            </lightning-layout-item>
+        </lightning-layout>
+    </lightning-card>
+</template>
