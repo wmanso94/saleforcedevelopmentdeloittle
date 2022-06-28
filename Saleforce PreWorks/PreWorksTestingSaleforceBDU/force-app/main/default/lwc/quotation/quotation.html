@@ -1,18 +1,21 @@
 <template>
     <lightning-card title="Product Search">
-        <lightning-layout multiple-rows="true" vertical-align="end">
-            <lightning-layout-item size="4" padding="around_small" class="slds-m-around_medium">
+        <lightning-record-edit-form class="slds-m-around_medium">
+            <div class="slds-m-around_medium">
+            <lightning-layout-item size="8" padding="around_small">
                 <!--Lightning input-->
                 <lightning-input type="text" label="Enter Product Code" value={key} onchange={updateKey}></lightning-input>
-            </lightning-layout-item>
-            <lightning-layout-item size="2" padding="around_small" class="slds-m-around_medium">
+            </lightning-layout-item></div>
+            <div class="slds-m-around_medium">
+            <lightning-layout-item size="2" padding="around_small">
                 <!--Lightning button-->
                 <lightning-button label="Search" onclick={handleSearch} variant="brand"></lightning-button>
-            </lightning-layout-item>
-            <lightning-layout-item size="12" padding="around_small">
+            </lightning-layout-item></div>
+            <lightning-layout-item size="10" padding="around_medium" class="slds-m-around_medium">
                 <!--Lightning table-->
-                <lightning-datatable key-field="Id" data={PricebookEntry} columns={cols} hide-checkbox-column="true" show-row-number-column="false"></lightning-datatable>
+                <lightning-datatable key-field="Id" data={Product2} columns={col1} hide-checkbox-column="true" ></lightning-datatable>
+                <lightning-datatable key-field="Id" data={PricebookEntry} columns={col2} hide-checkbox-column="true" hide-row-number-column="true" onclick={handleSave}></lightning-datatable>
             </lightning-layout-item>
-        </lightning-layout>
+        </lightning-record-edit-form>
     </lightning-card>
 </template>

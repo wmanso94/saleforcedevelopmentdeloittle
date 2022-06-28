@@ -1,5 +1,5 @@
 import { LightningElement, track } from 'lwc';
-import getAccounts from '@salesforce/apex/accountController.getAccounts';
+import getAccounts from '@salesforce/apex/AccountController.getAccounts';
 export default class CustomSearch extends LightningElement {
     key;
     @track accounts;

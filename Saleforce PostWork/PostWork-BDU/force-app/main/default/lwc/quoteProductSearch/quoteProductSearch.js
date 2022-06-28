@@ -1,5 +1,5 @@
 import { LightningElement } from 'lwc';
-import serachAccs from '@salesforce/apex/LWCExamples.retriveAccs';
+import serachAccs from '@salesforce/apex/QuotationHelper.retriveAccs';
 
 const columns = [
     {
@@ -28,7 +28,7 @@ const columns = [
     },
 ];
 
-export default class DynamicSearchInLWC extends LightningElement {
+export default class QuoteProductSearch extends LightningElement {
 
     searchData;
     columns = columns;
